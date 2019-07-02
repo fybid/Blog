@@ -1,0 +1,176 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>网络相关理解 | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://fybid.github.io">
+  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562033765027" alt="">
+  </a>
+  <h1 class="site-title">
+    伪犬情报收集站
+  </h1>
+  <p class="site-description">
+    用于个人笔记和信息收集，有错误请帮忙指正。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/partner-link" class="menu">
+          友情链接
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              网络相关理解
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2018-07-09 ·
+              </time>
+              
+                <a href="https://fybid.github.io/tag/mVYEwfLAD" class="post-tag">
+                  # 网络
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>这是 我自己看看就好 系列..</p>
+<h3 id="关于localhost和127001">关于localhost和127.0.0.1</h3>
+<p><strong>localhost</strong>：也叫local ，正确的解释是：本地服务器，是不经网卡传输的，它不受网络防火墙和网卡相关的的限制。</p>
+<p><strong>127.0.0.1</strong>：在windows等系统的正确解释是：本机地址(本机服务器)，是通过网卡传输的，它依赖网卡，并受到网络防火墙和网卡相关的限制。</p>
+<p>很可能是localhost访问时，系统带的本机当前用户的权限去访问，而用ip的时候，等于本机是通过网络再去访问本机，可能涉及到网络用户的权限。
+一般设置程序时本地服务用localhost是最好的，localhost不会解析成IP，也不会占用网卡、网络资源。</p>
+<p align="right">2017.4.27</p>
+<h3 id="正向代理和反向代理">正向代理和反向代理</h3>
+<p>正向代理：</p>
+<pre><code>	主机-代理-目标服务器
+	中间服务器，帮助用户访问自身不能访问的网站内容
+	用户向代理发送请求，代理将请求转交服务端 -&gt; 服务端返回给代理，代理转交给用户
+</code></pre>
+<p>反向代理：</p>
+<pre><code>	主机-目标服务器-其他服务器
+	目标服务器作为中间服务器，抽取其他服务器上的内容返回给主机
+	用户向代理发送请求，代理可以根据不同需求去请求不同的服务端 -&gt; 服务端返回给代理，代理转交给用户
+</code></pre>
+<p><a href="https://www.zhihu.com/question/24723688">知乎</a>上有很有趣的图帮助理解wwww：
+{% asset_img p1.png 关于正向代理和反向代理 %}</p>
+<h3 id="请求头">请求头</h3>
+<pre><code>X-Forwarded-For：记录代理地址（匿名代理隐藏）
+X-Real-IP：记录真实IP地址</code></pre>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fybid.github.io/post/shu-ju-ku-wen-ti-shou-ji">
+              <h3 class="post-title">
+                数据库 问题收集
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>数据库 问题收集 | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://fybid.github.io">
+  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562033765027" alt="">
+  </a>
+  <h1 class="site-title">
+    伪犬情报收集站
+  </h1>
+  <p class="site-description">
+    用于个人笔记和信息收集，有错误请帮忙指正。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/partner-link" class="menu">
+          友情链接
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              数据库 问题收集
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2018-07-09 ·
+              </time>
+              
+                <a href="https://fybid.github.io/tag/pNt57g3bx" class="post-tag">
+                  # 数据库
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <h2 id="mysql">MySQL</h2>
+<ol>
+<li>
+<p><strong>Data truncated for column XXXXX</strong></p>
+<p>错误说明：程序中字段数据的长度 与 数据库字段 设定不一致</p>
+</li>
+<li>
+<p><strong>too many connections</strong></p>
+<p>错误说明：每次进行数据库操作都会开启连接，当连接数超过配置的数量限制就会报错</p>
+</li>
+<li>
+<p><strong>Deadlock found when trying to get lock; try restarting transaction</strong></p>
+<p>错误说明：死锁相关，处理方式已丢失..</p>
+</li>
+<li>
+<p><strong>SQL Error: 1064, SQLState: 42000</strong></p>
+<p>错误说明：数据库字段使用了to、from等保留关键字</p>
+</li>
+</ol>
+<h2 id="sqlserver">SQLServer</h2>
+<ol>
+<li>
+<p><strong>sqlserver:'@P0' 附近有语法错误</strong></p>
+<pre><code> 错误说明：参数不符合关键字或方法传参的要求，P0表示第一个，P1表示第二个，以此类推。
+</code></pre>
+</li>
+<li>
+<p><strong>对于特殊字符的处理</strong></p>
+<pre><code> 解决方法：&lt;![CDATA[此处进行特殊转义字符处理]]&gt;，似乎mysql通用。
+</code></pre>
+</li>
+</ol>
+<h2 id="mongodb">MongoDB</h2>
+<p>注意mongoDB不提供max和min这两项常规函数</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fybid.github.io/post/java-ji-chu-zhi-shi">
+              <h3 class="post-title">
+                JAVA基础知识
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

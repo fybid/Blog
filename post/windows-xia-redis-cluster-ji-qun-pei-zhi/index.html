@@ -1,0 +1,194 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Windows下Redis-Cluster集群配置 | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://fybid.github.io">
+  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562033765027" alt="">
+  </a>
+  <h1 class="site-title">
+    伪犬情报收集站
+  </h1>
+  <p class="site-description">
+    用于个人笔记和信息收集，有错误请帮忙指正。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/partner-link" class="menu">
+          友情链接
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Windows下Redis-Cluster集群配置
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2018-07-28 ·
+              </time>
+              
+                <a href="https://fybid.github.io/tag/46GE1guBZ" class="post-tag">
+                  # 配置
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p><strong>这是一份百度的配置记录</strong></p>
+<ol>
+<li>
+<p>复制多个配置文件redis.windows.conf</p>
+</li>
+<li>
+<p>修改文件夹下的redis.windows.conf中的</p>
+<p>(1)端口号 <img src="%5Cimages%5Cpasted-0.png" alt="upload successful"></p>
+<p>(2)集群支持配置 <img src="%5Cimages%5Cpasted-1.png" alt="upload successful"></p>
+</li>
+<li>
+<p>安装并启动服务</p>
+<pre><code> redis-server.exe --service-install redis.6401.conf --service-name redis-6401
+ 
+ redis-server.exe --service-start --service-name redis-6401
+</code></pre>
+<p>生成服务：<img src="%5Cimages%5Cpasted-3.png" alt="upload successful"></p>
+<p>生成文件：<img src="%5Cimages%5Cpasted-4.png" alt="upload successful"></p>
+</li>
+<li>
+<p>下载ruby环境下Redis的驱动</p>
+<pre><code> gem install redis
+</code></pre>
+</li>
+<li>
+<p>下载Redis官方提供的创建Redis集群的ruby脚本文件**<a href="https://raw.githubusercontent.com/MSOpenTech/redis/3.0/src/redis-trib.rb">redis-trib.rb</a>**</p>
+</li>
+<li>
+<p>创建Redis集群:redis-trib.rb create --replicas 0 127.0.0.1:6401 127.0.0.1:6402 ... <img src="%5Cimages%5Cpasted-5.png" alt="upload successful"></p>
+</li>
+<li>
+<p>检验节点 redis-trib.rb check 127.0.0.1:6401 出现 <img src="%5Cimages%5Cpasted-6.png" alt="upload successful"></p>
+</li>
+<li>
+<p>检查集群状态 进入任意节点客户端 输入cluster nodes <img src="%5Cimages%5Cpasted-7.png" alt="upload successful"></p>
+</li>
+<li>
+<p>尝试保存一条信息，可以看到指向哪个节点的nage <img src="%5Cimages%5Cpasted-8.png" alt="upload successful"></p>
+</li>
+</ol>
+<p>额外提一句，java里Cluster集群的操作对象有JedisCluster</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fybid.github.io/post/windows-huan-jing-xia-de-rubygem-pei-zhi-ji-lu">
+              <h3 class="post-title">
+                Windows环境下的RubyGem配置记录
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>mysql技巧记录 | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://fybid.github.io">
+  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562033765027" alt="">
+  </a>
+  <h1 class="site-title">
+    伪犬情报收集站
+  </h1>
+  <p class="site-description">
+    用于个人笔记和信息收集，有错误请帮忙指正。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/partner-link" class="menu">
+          友情链接
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              mysql技巧记录
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2018-07-09 ·
+              </time>
+              
+                <a href="https://fybid.github.io/tag/pNt57g3bx" class="post-tag">
+                  # 数据库
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <h3 id="批量更新">批量更新</h3>
+<pre><code>mysql中好像没有批量更新的相关方法，可使用case..when..then格式的方式进行批量更新
+</code></pre>
+<h3 id="not-in">not in()</h3>
+<pre><code>sql语句中，not in() 排除一部分值在in内的元素，同时也会排除值为空的元素
+</code></pre>
+<h3 id="left-join">left join</h3>
+<p>在使用left jion时，on和where条件的区别如下：</p>
+<p>1、on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。</p>
+<p>2、where条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有left join的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</p>
+<h3 id="导入导出dump文件">导入导出dump文件</h3>
+<p>导出</p>
+<pre><code>mysqldump -u[数据库账号] -p[数据库密码] -P[端口号] -h[目标数据库IP地址] [数据库名] [表名] &gt; [dump文件路径]
+</code></pre>
+<p>导入</p>
+<pre><code>mysqldump  -u[数据库账号] -p[数据库密码] -P[端口号] -h[目标数据库IP地址] [数据库名] [表名] &lt; [dump文件路径]
+</code></pre>
+<h3 id="order-by">order by</h3>
+<pre><code>曾经使用RDS时，IOPS使用率过高，后来发现原因是id没有建立索引，sql中用了order by id 进行了全表扫描，又有多个数据库连接所导致
+</code></pre>
+<h3 id="关联操作">关联操作</h3>
+<p>关联操作 若有同名字段 只能将 * 逐条列出..
+如果想用关联表字段替换原表字段则要在取出时忽略原字段，取出关联表字段并用as更改为原表要替换的字段名（当然，两者的数据类型得一致</p>
+<h3 id="设置字段只读">设置字段只读</h3>
+<p>触发器方法,防止修改name 字段:</p>
+<pre><code>create trigger tr_update on 你的表
+for update
+as
+if update(name) rollback tran
+go
+</code></pre>
+<p>--当允许修改name的时候,执行下面的语句关闭触发器</p>
+<pre><code>	alter table 你的表 disable trigger tr_update
+</code></pre>
+<p>--当不允许修改name的时候,执行下面的语句开启触发器</p>
+<pre><code>	alter table 你的表 enable trigger tr_update
+</code></pre>
+<p>--同时对用户的权限做限制,只允许管理员有开启/关闭触发器的权限</p>
+<h3 id="建表冲突情况分析">建表冲突情况分析</h3>
+<ol>
+<li>自动编号和默认值一起设置会出错</li>
+<li>text类型字段设置默认值会报错</li>
+<li>date类型字段默认值格式不正确会报错</li>
+</ol>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fybid.github.io/post/springboot-xiang-mu-shi-ti-lei-ying-she-sheng-cheng-shu-ju-biao-de-pei-zhi-fang-shi">
+              <h3 class="post-title">
+                SpringBoot项目-实体类映射生成数据表的配置方式
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

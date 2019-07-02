@@ -3,8 +3,8 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于 | 伪犬情报收集站</title>
-<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562031182600">
+<title>PHP配置注意事项 | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://fybid.github.io">
-  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562031182600" alt="">
+  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562033765027" alt="">
   </a>
   <h1 class="site-title">
     伪犬情报收集站
@@ -80,17 +80,29 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于
+              PHP配置注意事项
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-01-25 ·
+                · 2018-07-04 ·
               </time>
+              
+                <a href="https://fybid.github.io/tag/I7AGN8zx0" class="post-tag">
+                  # 部署
+                </a>
               
             </div>
             
             <div class="post-content">
-              <p>这是关于的页面，可以在这里向世界介绍你！</p>
+              <h3 id="添加php拓展组件">添加php拓展组件</h3>
+<p>举个例子(php7)，要在win系统下扩展redis功能，需要根据以下信息（可通过phpinfo()方法获取）：</p>
+<pre><code>	1.php版本
+	2.php位数(x86 or x64)
+	3.线程安全版本
+</code></pre>
+<p>到 <strong><a href="http://pecl.php.net/package/redis">pecl网站</a></strong> 确定dll文件并下载，放置到php根目录下的ext文件夹中;
+修改php.ini, 在其中添加 <strong>extension=php_redis.dll</strong> ，重启apache即可</p>
+<h3 id="待更新">待更新</h3>
 
             </div>
           </article>

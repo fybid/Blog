@@ -1,0 +1,201 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>建立websocket | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://fybid.github.io">
+  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562033765027" alt="">
+  </a>
+  <h1 class="site-title">
+    伪犬情报收集站
+  </h1>
+  <p class="site-description">
+    用于个人笔记和信息收集，有错误请帮忙指正。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/partner-link" class="menu">
+          友情链接
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              建立websocket
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2018-07-23 ·
+              </time>
+              
+                <a href="https://fybid.github.io/tag/fCyil_n4l" class="post-tag">
+                  # 工具类
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>记录一种最简单的流程</p>
+<h1 id="frontend">Frontend</h1>
+<p>建立一个websocket对象，并监听：</p>
+<pre><code>var socketUrl =&quot;ws://localhost:8080/test_ws&quot;;
+socket = new WebSocket(socketUrl);
+warnSocket.startListener();
+</code></pre>
+<p>监听事件：</p>
+<pre><code>socket.onerror = function() {
+	//错误
+}
+socket.onopen = function() {
+	//打开
+}
+socket.onmessage = function() {
+	//发送
+	socket.send(&quot;message&quot;); //给后端发送信息
+}
+socket.onclose = function() {
+	//关闭
+}
+</code></pre>
+<p>建立重连什么的请自行想象着做吧wwwww</p>
+<h1 id="backend">Backend</h1>
+<p>后端也有对应的4个事件</p>
+<pre><code>@Component
+@ServerEndpoint(&quot;/test_ws&quot;)
+public class TestWebSocket {
+	@OnOpen
+    public void onOpen(Session session ) throws Exception{
+        //开启时...
+    }
+	@OnMessage
+    public void onMessage(String message, Session session ) throws Exception{
+		System.out.println(message); //接收到的前端信息
+		//...
+    	session.getAsyncRemote().sendText(&quot;receive&quot;); //给前端发送&quot;收到&quot;的信息
+    }
+	@OnClose
+    public void onClose(Session session ) throws Exception{
+        //关闭时...
+    }
+	@OnError
+    public void onError(Throwable error, Session session ) throws Exception{
+        //错误处理...
+    }
+}
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fybid.github.io/post/sublime-pei-zhi-wen-ti-yu-shi-yong-ji-qiao-ji-lu">
+              <h3 class="post-title">
+                sublime配置问题与使用技巧记录
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

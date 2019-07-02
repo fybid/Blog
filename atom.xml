@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fybid.github.io</id>
     <title>伪犬情报收集站</title>
-    <updated>2019-07-02T01:33:06.822Z</updated>
+    <updated>2019-07-02T02:16:21.773Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fybid.github.io"/>
     <link rel="self" href="https://fybid.github.io/atom.xml"/>
@@ -11,35 +11,449 @@
     <icon>https://fybid.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 伪犬情报收集站</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://fybid.github.io/post/hello-gridea</id>
-        <link href="https://fybid.github.io/post/hello-gridea">
+        <title type="html"><![CDATA[（JAVA）fastjson使用心得]]></title>
+        <id>https://fybid.github.io/post/javafastjson-shi-yong-xin-de</id>
+        <link href="https://fybid.github.io/post/javafastjson-shi-yong-xin-de">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2018-08-10T08:47:50.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>
+<p>在model类的指定字段上加上 <code>@JSONField(name = &quot;xxx&quot;)</code> 能够在json转类对象时 对key为xxx的字段 转换为 进行了相应注解的model类字段。</p>
+</li>
+<li>
+<p>在model类的指定字段上加上 <code>@JSONField(serialize = false)</code> 能够在json转类对象时 忽略进行了相应注解的model类字段。</p>
+</li>
+<li>
+<p>创建PropertyFilter对象，如下：</p>
+<pre><code> PropertyFilter filter = (object, key, value) -&gt; {
+ 	//过滤处理
+ };
+
+ 在其中进行过滤处理，再在对象转json数组时传入filter对象，能够对一些数据进行过滤处理</code></pre>
+</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[（Spring）三种自动注入的方式]]></title>
+        <id>https://fybid.github.io/post/spring-de-san-chong-zi-dong-zhu-ru-de-fang-shi</id>
+        <link href="https://fybid.github.io/post/spring-de-san-chong-zi-dong-zhu-ru-de-fang-shi">
+        </link>
+        <updated>2018-08-04T01:28:43.000Z</updated>
+        <content type="html"><![CDATA[<p>1.变量（filed）注入</p>
+<pre><code>@Autowired
+UserDao userDao;
+</code></pre>
+<p>2.构造器注入</p>
+<pre><code>final
+UserDao userDao;
+
+@Autowired
+public UserServiceImpl(UserDao userDao) {
+    this.userDao = userDao;
+}
+</code></pre>
+<p>3.set方法注入</p>
+<pre><code>private UserDao userDao;
+
+@Autowired
+public void setUserDao (UserDao userDao) {
+    this.userDao = userDao;
+}
+</code></pre>
+<p>编译器会在你使用第一种时提出警告并推荐使用第三种</p>
+<p>大概是因为某些情况会报空指针异常的关系</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[mybatis使用自定义sql的方法]]></title>
+        <id>https://fybid.github.io/post/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa</id>
+        <link href="https://fybid.github.io/post/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa">
+        </link>
+        <updated>2018-08-04T01:16:00.000Z</updated>
+        <content type="html"><![CDATA[<p>在想法子动态建表、查表的时候找到的一种方法</p>
+<p>在xml中将标签的statementType值修改为“STATEMENT”，非预先编译，就能根据你传的sql语句进行操作。</p>
+<p>举个栗子：</p>
+<pre><code>&lt;select id=&quot;selectTable&quot; resultType=&quot;Map&quot; statementType=&quot;STATEMENT&quot;&gt;
+    ${sql}
+&lt;/select&gt;
+</code></pre>
+<h6 id="ps要使用-不能使用-原因下次再更新">ps：要使用$ 不能使用# 原因下次再更新</h6>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows下Redis-Cluster集群配置]]></title>
+        <id>https://fybid.github.io/post/windows-xia-redis-cluster-ji-qun-pei-zhi</id>
+        <link href="https://fybid.github.io/post/windows-xia-redis-cluster-ji-qun-pei-zhi">
+        </link>
+        <updated>2018-07-28T06:19:00.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>这是一份百度的配置记录</strong></p>
+<ol>
+<li>
+<p>复制多个配置文件redis.windows.conf</p>
+</li>
+<li>
+<p>修改文件夹下的redis.windows.conf中的</p>
+<p>(1)端口号 <img src="%5Cimages%5Cpasted-0.png" alt="upload successful"></p>
+<p>(2)集群支持配置 <img src="%5Cimages%5Cpasted-1.png" alt="upload successful"></p>
+</li>
+<li>
+<p>安装并启动服务</p>
+<pre><code> redis-server.exe --service-install redis.6401.conf --service-name redis-6401
+ 
+ redis-server.exe --service-start --service-name redis-6401
+</code></pre>
+<p>生成服务：<img src="%5Cimages%5Cpasted-3.png" alt="upload successful"></p>
+<p>生成文件：<img src="%5Cimages%5Cpasted-4.png" alt="upload successful"></p>
+</li>
+<li>
+<p>下载ruby环境下Redis的驱动</p>
+<pre><code> gem install redis
+</code></pre>
+</li>
+<li>
+<p>下载Redis官方提供的创建Redis集群的ruby脚本文件**<a href="https://raw.githubusercontent.com/MSOpenTech/redis/3.0/src/redis-trib.rb">redis-trib.rb</a>**</p>
+</li>
+<li>
+<p>创建Redis集群:redis-trib.rb create --replicas 0 127.0.0.1:6401 127.0.0.1:6402 ... <img src="%5Cimages%5Cpasted-5.png" alt="upload successful"></p>
+</li>
+<li>
+<p>检验节点 redis-trib.rb check 127.0.0.1:6401 出现 <img src="%5Cimages%5Cpasted-6.png" alt="upload successful"></p>
+</li>
+<li>
+<p>检查集群状态 进入任意节点客户端 输入cluster nodes <img src="%5Cimages%5Cpasted-7.png" alt="upload successful"></p>
+</li>
+<li>
+<p>尝试保存一条信息，可以看到指向哪个节点的nage <img src="%5Cimages%5Cpasted-8.png" alt="upload successful"></p>
+</li>
+</ol>
+<p>额外提一句，java里Cluster集群的操作对象有JedisCluster</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows环境下的RubyGem配置记录]]></title>
+        <id>https://fybid.github.io/post/windows-huan-jing-xia-de-rubygem-pei-zhi-ji-lu</id>
+        <link href="https://fybid.github.io/post/windows-huan-jing-xia-de-rubygem-pei-zhi-ji-lu">
+        </link>
+        <updated>2018-07-28T06:04:00.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="安装记录">安装记录</h2>
+<ol>
+<li>
+<p><strong><a href="https://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.6-x64.exe">Ruby语言环境安装</a></strong></p>
+</li>
+<li>
+<p><strong><a href="https://rubygems.org/pages/download">Gem安装</a></strong></p>
+</li>
+<li>
+<p>使用国内源：</p>
+<p>gem sources --remove https://rubygems.org/ 删掉原来的源</p>
+<p>gem sources -a http://gems.ruby-china.org/ 添加新源</p>
+<p>gem sources -l 查看现有的源</p>
+</li>
+</ol>
+<h2 id="遇到问题">遇到问题</h2>
+<p>Q:添加新源时遇到SSL验证错误</p>
+<pre><code>	ERROR:  SSL verification error at depth 1: unable to get local issuer certificate (20)
+	ERROR:  You must add /O=Digital Signature Trust Co./CN=DST Root CA X3 to your local trusted store
+	Error fetching https://gems.ruby-china.com/:
+	SSL_connect returned=1 errno=0 state=error: certificate verify failed (https://gems.ruby-china.com/specs.4.8.gz)
+</code></pre>
+<p>A:在**<a href="http://curl.haxx.se/ca/cacert.pem">这里</a>**下载文件，放到C盘的Ruby安装目录下，cmd设置路径:</p>
+<pre><code>set SSL_CERT_FILE=C:\ruby路径\cacert.pem</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Nginx配置]]></title>
+        <id>https://fybid.github.io/post/nginx-pei-zhi</id>
+        <link href="https://fybid.github.io/post/nginx-pei-zhi">
+        </link>
+        <updated>2018-07-27T05:31:00.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="根据请求转发到不同服务器">根据请求转发到不同服务器</h2>
+<p>配置文件修改如下：</p>
+<pre><code>http {
+    server {
+        listen       80;
+        server_name  localhost;
+
+        location /app_login {
+                proxy_pass http://server1:port1/login;
+                proxy_method GET;
+        }
+
+        location /sys_login {
+                proxy_pass http://server2:port2/login;
+                proxy_method POST;
+        }
+    }
+}
+</code></pre>
+<p>访问location/app_login和location/sys_login就能看到效果了</p>
+<h2 id="均衡负载">均衡负载</h2>
+<pre><code>upstream site {
+    server 地址1:端口1;
+    server 地址2:端口2;
+}
+
+server {
+    listen       80;
+    server_name  127.0.0.1;
+
+    location / {
+        proxy_pass http://site;
+    }
+}
+</code></pre>
+<p>好像还有不同的策略，具体可百度。
+另外要注意session保持问题..有缓存或持久化session对象的设定之类的项目，可以忽视..</p>
+<h2 id="常用命令">常用命令</h2>
+<p>重载配置：nginx -s reload
+强制关闭：nginx -s stop
+正常关闭：nginx -s quit</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[算法方面的一些简单知识]]></title>
+        <id>https://fybid.github.io/post/suan-fa-fang-mian-de-yi-xie-jian-dan-zhi-shi</id>
+        <link href="https://fybid.github.io/post/suan-fa-fang-mian-de-yi-xie-jian-dan-zhi-shi">
+        </link>
+        <updated>2018-07-26T02:00:45.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="异或">异或</h2>
+<p>简单应用：</p>
+<p>1.交换数值</p>
+<pre><code>a=a^b; 
+b=b^a; 
+a=a^b; 
+</code></pre>
+<p>2.排除出现偶数次的数字</p>
+<pre><code>  A ^ B ^ C ^ B ^ C ^ D ^ A
+= A ^ A ^ B ^ B ^ C ^ C ^ D
+= 0 ^ 0 ^ 0 ^ D
+= 0 ^ D
+= D
+</code></pre>
+<h2 id="动态规划">动态规划</h2>
+<p>阐述下动态规划需要条件：</p>
+<blockquote>
+<p>最优子结构： 最简递推式 F(10) = F(9) + F(8)</p>
+<p>边界： 递推式的结尾 类似: F(1) = 1</p>
+<p>状态转移公式： F(N) = F(N-1) + F(N-2)</p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[leetcode解题记录]]></title>
+        <id>https://fybid.github.io/post/leetcode-jie-ti-ji-lu</id>
+        <link href="https://fybid.github.io/post/leetcode-jie-ti-ji-lu">
+        </link>
+        <updated>2018-07-26T01:39:00.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="10-regular-expression-matching">10. Regular Expression Matching</h2>
+<p>Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*'.</p>
+<p>'.' Matches any single character.
+'*' Matches zero or more of the preceding element.
+The matching should cover the entire input string (not partial).</p>
+<blockquote>
+<p>s:aab
+p:cacab -&gt; (c*)(a*)(c*)(a)(b)</p>
+<p>逻辑:</p>
+<p>1.p为空 -&gt; s为空 返回true</p>
+<p>2.p长度为1,s长度为1 -&gt; p与s相同或p为. 返回true，否则返回false</p>
+<p>3.p带* -&gt; s为空或不匹配，对p下一位进行递归判断，否则对s下一位进行判断直到s与p不匹配</p>
+<p>4.p不带* -&gt; s不匹配，返回false，否则对下一位进行判定</p>
+</blockquote>
+<h2 id="22-generate-parentheses">22. Generate Parentheses</h2>
+<p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p>
+<blockquote>
+<p>1-1.()  1</p>
+<p>2-1.(()) 2-2.()()  1x3-1</p>
+<p>3-1.((())) 3-2.(()()) 3-3.()(()) 3-4.(())() 3-5.()()()   2x3-1</p>
+<p>[&quot;(((())))&quot;,&quot;((()()))&quot;,&quot;((())())&quot;,&quot;((()))()&quot;,&quot;(()(()))&quot;,&quot;(()()())&quot;,&quot;(()())()&quot;,&quot;(())(())&quot;,&quot;(())()()&quot;,&quot;()((()))&quot;,&quot;()(()())&quot;&quot;()(())()&quot;,&quot;()()(())&quot;,&quot;()()()()&quot;]  5x3-1</p>
+</blockquote>
+<p>3的逻辑：</p>
+<blockquote>
+<p>1.写( left=2 right=3</p>
+<p>1-1.写( left=1 right=3 1-2.写) left=2 right=2</p>
+<p>1-1-1. 写( left=0 right=3 1-1-2.写) left=1 right=2 1-2-1.写( left=1 right=2 1-2-2.写) left=1 right=1</p>
+</blockquote>
+<p>只有两个逻辑[ 写'(' 和 写')' ] 而且需要遍历</p>
+<p>先后尝试了嵌套、数字排列..最后采用递归的基础写入字符才成功..</p>
+<p>所以现在仍然不具备解决问题的直觉←_←</p>
+<h2 id="44-wildcard-matching">44. Wildcard Matching</h2>
+<p>Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*'.</p>
+<p>'?' Matches any single character.
+'*' Matches any sequence of characters (including the empty sequence).
+The matching should cover the entire input string (not partial).</p>
+<p>分情况叙述：</p>
+<p>s：
+1.空串
+2.普通字符串</p>
+<p>p：
+1.单匹配
+1.普通字符
+2.?字符
+2.空匹配 *
+3.多匹配 *</p>
+<p>代码(代码效率低，基础逻辑)：</p>
+<pre><code>public boolean isMatch(String s, String p) {
+    char[] sArr = s.toCharArray();
+    char[] pArr = p.toCharArray();
+    StringBuilder sb = new StringBuilder();
+    
+    for(int i=0;i&lt;pArr.length-1;i++) {
+        if(pArr[i] == '*' &amp;&amp; pArr[i+1] == '*')
+            continue;
+        sb.append(pArr[i]);
+    }
+    
+    if(pArr.length&gt;0)
+        sb.append(pArr[pArr.length-1]);
+    
+    char[] newArr = sb.toString().toCharArray();
+    
+    return match(sArr,newArr,0,0);
+}
+
+private boolean match(char[] s, char[] p, int pos1, int pos2) {
+    
+    //判断s是否结束
+    if (pos1==s.length)
+        if (p.length==pos2 || pos2==p.length-1 &amp;&amp; p[pos2]=='*')
+            return true;
+        else 
+            return false;
+    
+    //判断p是否结束
+    if (pos2==p.length)
+        return s.length==pos1;
+    
+    if (p[pos2]=='?')
+        return match(s,p,pos1+1,pos2+1);
+    else if (p[pos2]=='*') {
+        return match(s,p,pos1,pos2+1) || match(s,p,pos1+1,pos2+1) || match(s,p,pos1+1,pos2);
+    } else if(p[pos2]!=s[pos1]) {
+        return false;
+    }
+    
+    return match(s,p,pos1+1,pos2+1);
+}
+</code></pre>
+<p>然而按照以上并不能通过，会得到超时的结果，可以按照以上逻辑转换成DP(动态规划)：</p>
+<pre><code>public boolean isMatch(String s, String p) {
+    int m=s.length();
+    int n=p.length();
+    boolean[][] dp = new boolean[m+1][n+1];
+    dp[0][0] = true;
+    
+    for (int j=0;j&lt;n;j++) {
+        dp[0][j+1] = p.charAt(j)=='*' &amp;&amp; dp[0][j];
+        for (int i=0;i&lt;m;i++) {
+            if (s.charAt(i) == p.charAt(j) || p.charAt(j) == '?')
+                dp[i+1][j+1] = dp[i][j];
+            else if(p.charAt(j) == '*')
+                dp[i+1][j+1] = dp[i][j] || dp[i+1][j] || dp[i][j+1];
+        }
+    }
+    
+    return dp[m][n];
+}
+</code></pre>
+<h2 id="还有些没存在现在的电脑里待更新">还有些没存在现在的电脑里，待更新</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[建立websocket]]></title>
+        <id>https://fybid.github.io/post/jian-li-websocket</id>
+        <link href="https://fybid.github.io/post/jian-li-websocket">
+        </link>
+        <updated>2018-07-23T05:57:24.000Z</updated>
+        <content type="html"><![CDATA[<p>记录一种最简单的流程</p>
+<h1 id="frontend">Frontend</h1>
+<p>建立一个websocket对象，并监听：</p>
+<pre><code>var socketUrl =&quot;ws://localhost:8080/test_ws&quot;;
+socket = new WebSocket(socketUrl);
+warnSocket.startListener();
+</code></pre>
+<p>监听事件：</p>
+<pre><code>socket.onerror = function() {
+	//错误
+}
+socket.onopen = function() {
+	//打开
+}
+socket.onmessage = function() {
+	//发送
+	socket.send(&quot;message&quot;); //给后端发送信息
+}
+socket.onclose = function() {
+	//关闭
+}
+</code></pre>
+<p>建立重连什么的请自行想象着做吧wwwww</p>
+<h1 id="backend">Backend</h1>
+<p>后端也有对应的4个事件</p>
+<pre><code>@Component
+@ServerEndpoint(&quot;/test_ws&quot;)
+public class TestWebSocket {
+	@OnOpen
+    public void onOpen(Session session ) throws Exception{
+        //开启时...
+    }
+	@OnMessage
+    public void onMessage(String message, Session session ) throws Exception{
+		System.out.println(message); //接收到的前端信息
+		//...
+    	session.getAsyncRemote().sendText(&quot;receive&quot;); //给前端发送&quot;收到&quot;的信息
+    }
+	@OnClose
+    public void onClose(Session session ) throws Exception{
+        //关闭时...
+    }
+	@OnError
+    public void onError(Throwable error, Session session ) throws Exception{
+        //错误处理...
+    }
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[sublime配置问题与使用技巧记录]]></title>
+        <id>https://fybid.github.io/post/sublime-pei-zhi-wen-ti-yu-shi-yong-ji-qiao-ji-lu</id>
+        <link href="https://fybid.github.io/post/sublime-pei-zhi-wen-ti-yu-shi-yong-ji-qiao-ji-lu">
+        </link>
+        <updated>2018-07-19T05:47:48.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>
+<p>标签切换</p>
+<pre><code> 可以使用 鼠标右键+滚轮 的方式切换标签
+</code></pre>
+</li>
+<li>
+<p>删除光标后文字</p>
+<pre><code> ctrl+KK 可以删除光标后所有文字
+</code></pre>
+</li>
+<li>
+<p>安装代码格式化插件(HTML-CSS-JS Prettify)</p>
+<pre><code> (1).ctrl+shift+p:输入package control
+ (2).package control若未安装:输入Install package安装
+ (3).输入pretty，选择HTML-CSS-JS Prettify后回车即可安装，慢的话可以查看最下方状态栏显示的安装情况
+ (4).安装完毕后，右键就有相应菜单HTML-CSS-JS Prettify，其下的Prettify Code可以格式化代码
+</code></pre>
+</li>
+<li>
+<p>安装livereload</p>
+<pre><code> (1).ctrl+shift+p -&gt; install package -&gt; liveReload
+ (2).liveReload配置: preferences -&gt; Packge Settings -&gt; LiveReload -&gt; Settings - Default
+ 	保存以下内容
+ 	{
+ 	    &quot;enabled_plugins&quot;: [
+ 	        &quot;SimpleReloadPlugin&quot;,
+ 	        &quot;SimpleRefresh&quot;
+ 	    ]
+ 	}
+</code></pre>
+</li>
+</ol>
 ]]></content>
     </entry>
 </feed>

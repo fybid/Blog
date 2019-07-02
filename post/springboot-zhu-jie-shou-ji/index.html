@@ -1,0 +1,213 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>（SpringBoot）注解收集 | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://fybid.github.io">
+  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562033765027" alt="">
+  </a>
+  <h1 class="site-title">
+    伪犬情报收集站
+  </h1>
+  <p class="site-description">
+    用于个人笔记和信息收集，有错误请帮忙指正。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/partner-link" class="menu">
+          友情链接
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              （SpringBoot）注解收集
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2018-07-09 ·
+              </time>
+              
+                <a href="https://fybid.github.io/tag/syimA0xeq" class="post-tag">
+                  # 框架
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <h3 id="scheduled">Scheduled</h3>
+<p>@Scheduled(cron = &quot;0 0 0&quot;) //定点启动任务</p>
+<p><em>fixedRate</em>就是每多少分钟一次，不论你业务执行花费了多少时间。</p>
+<p><em>fixedDelay</em>是当任务执行完毕后1分钟在执行。</p>
+<p><strong>cron表达式</strong></p>
+<blockquote>
+<p>cron表达式,有专门的语法, 特殊的语法可以单独去查。</p>
+<p>cron一共有7位，但是最后一位是年，可以留空：</p>
+<ul>
+<li>第一位，表示秒，取值0-59</li>
+</ul>
+</blockquote>
+<ul>
+<li>第二位，表示分，取值0-59</li>
+<li>第三位，表示小时，取值0-23</li>
+<li>第四位，日期 日，取值1-31</li>
+<li>第五位，日期 月份，取值1-12</li>
+<li>第六位，星期，取值1-7，星期一，星期二...，注：不是第1周，第二周的意思
+(<font size=2>ps：1表示星期天，2表示星期一。</font>)</li>
+<li>第7为，年份，可以留空，取值1970-2099</li>
+</ul>
+<blockquote>
+<pre><code>  (**)星号：可以理解为每的意思，每秒，每分，每天，每月，每年...
+  (?)问号：问号只能出现在日期和星期这两个位置，表示这个位置的值不确定，每天3点执行，所以第六位星期的位置，我们是不需要关注的，
+  就是不确定的值。同时：日期和星期是两个相互排斥的元素，通过问号来表明不指定值。比如，1月10日，比如是星期1，如果在星期的位置是
+  另指定星期二，就前后冲突矛盾了。
+  (-)减号：表达一个范围，如在小时字段中使用“10-12”，则表示从10到12点，即10,11,12
+  (,)逗号：表达一个列表值，如在星期字段中使用“1,2,4”，则表示星期一，星期二，星期四
+  (/)斜杠：如：x/y，x是开始值，y是步长，比如在第一位（秒） 0/15就是，从0秒开始，每15秒，最后就是0，15，30，45，60    
+</code></pre>
+</blockquote>
+<pre><code>	(另：*/y 等同于0/y)
+</code></pre>
+<blockquote>
+<p>范例：</p>
+<p>0 0 3 * * ?     每天3点执行
+0 5 3 * * ?     每天3点5分执行
+0 5 3 ? * *     每天3点5分执行，与上面作用相同
+0 5/10 3 * * ?  每天3点的 5分，15分，25分，35分，45分，55分这几个时间点执行
+0 10 3 ? * 1    每周星期天，3点10分 执行，注：1表示星期天<br>
+0 10 3 ? * 1#3  每个月的第三个星期，星期天 执行，#号只能出现在星期的位置</p>
+</blockquote>
+<h3 id="enablescheduling">EnableScheduling</h3>
+<p>@EnableScheduling //用于开启@Scheduled</p>
+<h3 id="value">Value</h3>
+<p>@Value(&quot;${xxx}&quot;)可以读取默认配置文件(properties)中的xxx字段</p>
+<h3 id="initbinder">InitBinder</h3>
+<p>@InitBinder</p>
+<p>实际项目中对该注解的应用经验：
+ajax请求发生错误：<code>Failed to convert value of type 'java.lang.String' to required type 'java.util.Date'</code>
+在网上查找解决方法时了解到通过在后端加入以下内容可解决该问题：
+public void initBinder(WebDataBinder binder, WebRequest request) {
+//转换日期
+DateFormat dateFormat=new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));// CustomDateEditor为自定义日期编辑器
+}</p>
+<h3 id="generatedvalue">GeneratedValue</h3>
+<p>@GeneratedValue 实体类生成id，jpa</p>
+<h3 id="genericgenerator">GenericGenerator</h3>
+<p>@GenericGenerator 注解@GeneratedValue的策略补充，hibernate</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fybid.github.io/post/springboot-qi-dong-wen-ti-shou-ji">
+              <h3 class="post-title">
+                （SpringBoot）启动问题收集
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

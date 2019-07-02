@@ -1,9 +1,9 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>伪犬情报收集站</title>
+<title>JAVA字符串 中文乱码问题 | 伪犬情报收集站</title>
 <link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,27 +77,68 @@
 </div>
 
 
-        <div class="tags-container">
-          
-            <a class="tag" href="https://fybid.github.io/tag/fCyil_n4l">工具类</a>
-          
-            <a class="tag" href="https://fybid.github.io/tag/syimA0xeq">框架</a>
-          
-            <a class="tag" href="https://fybid.github.io/tag/pNt57g3bx">数据库</a>
-          
-            <a class="tag" href="https://fybid.github.io/tag/46GE1guBZ">配置</a>
-          
-            <a class="tag" href="https://fybid.github.io/tag/hWzsVAhDs">算法</a>
-          
-            <a class="tag" href="https://fybid.github.io/tag/I7AGN8zx0">部署</a>
-          
-            <a class="tag" href="https://fybid.github.io/tag/4_ME59-9f">语言</a>
-          
-            <a class="tag" href="https://fybid.github.io/tag/mVYEwfLAD">网络</a>
-          
-            <a class="tag" href="https://fybid.github.io/tag/ZCtcn0pI5">测试</a>
-          
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              JAVA字符串 中文乱码问题
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2018-07-10 ·
+              </time>
+              
+                <a href="https://fybid.github.io/tag/46GE1guBZ" class="post-tag">
+                  # 配置
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>java 读取配置文件中文乱码 解决方法：
+new String(resource.getString(&quot;product_property&quot;).getBytes(&quot;GBK&quot;),&quot;UTF-8&quot;);</p>
+
+            </div>
+          </article>
         </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fybid.github.io/post/mysql-ji-qiao-ji-lu">
+              <h3 class="post-title">
+                mysql技巧记录
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 

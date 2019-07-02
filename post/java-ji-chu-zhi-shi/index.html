@@ -1,0 +1,218 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JAVA基础知识 | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://fybid.github.io">
+  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562033765027" alt="">
+  </a>
+  <h1 class="site-title">
+    伪犬情报收集站
+  </h1>
+  <p class="site-description">
+    用于个人笔记和信息收集，有错误请帮忙指正。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/partner-link" class="menu">
+          友情链接
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              JAVA基础知识
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2018-07-09 ·
+              </time>
+              
+                <a href="https://fybid.github.io/tag/4_ME59-9f" class="post-tag">
+                  # 语言
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <h3 id="synchronized">synchronized</h3>
+<pre><code>关键字，当它用来修饰一个方法或者一个代码块的时候，能够保证在同一时刻最多只有一个线程执行该段代码。
+</code></pre>
+<h3 id="linkedlist-和-arraylist">Linkedlist 和 ArrayList</h3>
+<pre><code>LinkedList是双向链表，没有初始化大小
+ArrayList初始化大小为10
+
+一般在尾部新增元素的话，LinkedList的速度是比ArrayList慢的，LinkedList需要创建节点并进行指向，ArrayList则只要尾部加1，导致LinkedList速度比Arraylist慢
+
+随机增删元素时，ArrayList需要增删元素需要移动位置，LinkedList只是新增删除节点，导致ArrayList速度比LinkedList慢；但是查找时ArrayList有下标直接定位，LinkedList通过遍历定位，LinkedList的速度就比ArrayList慢。
+
+另外，LinkedList不具有 线程安全 的特质【远古记录：多线程并发操作时遇到过头部丢失的情况】
+	 ArrayList也不具有 线程安全 的特质，可看源码的add方法实现
+</code></pre>
+<h3 id="null">NULL</h3>
+<pre><code>java 关于null：
+	1.不能将null赋值给基本类型(int,boolean等)
+	2.对null进行instanceof操作会报错
+</code></pre>
+<h3 id="stringbuffer-与-stringbuilder">StringBuffer 与 StringBuilder</h3>
+<pre><code>StringBuffer:
+	1.保证线程安全
+	2.效率相比较低
+
+StringBuilder:
+	1.线程不安全
+	2.效率相比更高
+</code></pre>
+<h3 id="hashmap">HashMap</h3>
+<pre><code>put时，根据key的hash值确定位置存放；当该位置有值时，会以链表的形式存放，新值存表头。
+get时，先根据key的hash值定位，若有多值，则遍历使用equals确定查找目标。
+</code></pre>
+<h3 id="stream">Stream</h3>
+<pre><code>stream流操作：
+	filter：过滤
+	map：在流中对所有值做映射
+	collector：获取集合，根据Collectors参数确定输出的集合类型
+    findany：任意匹配，需要与orElse配合使用才能得到想要的结果
+</code></pre>
+<h3 id="lambda">lambda</h3>
+<p><em>2017-3-28：</em></p>
+<p>看了下java8下的lambda表达式的示例</p>
+<p>实现Runnable线程案例</p>
+<p>使用() -&gt; {} 替代匿名类：
+//Before Java 8:</p>
+<pre><code>new Thread(new Runnable() {
+	@Override
+    public void run() {
+        System.out.println(&quot;Before Java8 &quot;);
+    }
+}).start();
+</code></pre>
+<p>//Java 8 way:</p>
+<pre><code>new Thread( () -&gt; System.out.println(&quot;In Java8!&quot;) ).start();
+</code></pre>
+<p>可以使用 下面语法实现Lambda:</p>
+<pre><code>(params) -&gt; expression
+(params) -&gt; statement
+(params) -&gt; { statements }
+</code></pre>
+<p>如果你的方法并不改变任何方法参数，比如只是输出，那么可以简写如下：</p>
+<pre><code>() -&gt; System.out.println(&quot;Hello Lambda Expressions&quot;);
+</code></pre>
+<p>如果你的方法接受两个方法参数，如下：</p>
+<pre><code>(int even, int odd) -&gt; even + odd</code></pre>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fybid.github.io/post/springboot-zhu-jie-shou-ji">
+              <h3 class="post-title">
+                （SpringBoot）注解收集
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>（JAVA）excel文件上传和处理流程 | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://fybid.github.io">
+  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562033765027" alt="">
+  </a>
+  <h1 class="site-title">
+    伪犬情报收集站
+  </h1>
+  <p class="site-description">
+    用于个人笔记和信息收集，有错误请帮忙指正。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/partner-link" class="menu">
+          友情链接
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              （JAVA）excel文件上传和处理流程
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2018-07-19 ·
+              </time>
+              
+                <a href="https://fybid.github.io/tag/fCyil_n4l" class="post-tag">
+                  # 工具类
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <h6 id="记录一下上传excel文件并导入数据库前端到后端的过程">记录一下上传excel文件并导入数据库，前端到后端的过程</h6>
+<p>前端：</p>
+<p>使用的是 FileReader</p>
+<p>事先写好reader的监听事件 onloadstart和onloadend</p>
+<p>input type:file 触发上传 -js事件中调用reader的readAsDataURL方法</p>
+<p>onloadstart 触发文件上传提示 -onloadend 触发ajax请求 将文件传送到后端</p>
+<p>后端：</p>
+<p>接受参数选用string，能拿到带前缀的base64编码，类似于：</p>
+<p><code>“data:application/vnd.ms-excel;base64,0M8R4KGxGuE...”</code></p>
+<p>注意截取，&quot;base64,&quot;之后才是编码本体.</p>
+<p>然后进行base64解码并创建空文件file，通过BufferedOutputStream将解码后的字节流写入到文件输出流FileOutputStream，再通过文件输出流写入file空文件，接下来通过FileInputStream获取该文件输入流，通过WorkBook读取文件输入流，使用WorkBook的方法就能读取到行列数据</p>
+<p>由于文件有相应类型，所以要先将数据流写入文件转换成对应类型的文件，再读取文件来读取相关数据
+多了转换的步骤，应该算是提高了安全系数吧..</p>
+<h6 id="关于excel文件的处理">关于excel文件的处理</h6>
+<p>将文件的bytes写入流后，可以是用POIFSFileSystem.hasPOIFSHeader()方法 判断该文件是否为excel2003版，这个版本可使用HSSFWorkbook来处理；使用POIXMLDocument.hasOOXMLHeader()方法 判断该文件是否为excel2007版，这个版本可使用XSSFWorkbook来处理。</p>
+<ul>
+<li>另外，听说当数据量超出65536条时，需要使用SXSSFworkbook，不然会OOM..或者也可以尝试下判断行数进行拆分处理？不了解</li>
+</ul>
+<p>对于直接通过流写入和读出excel，生成的文件字节数相比会很小..但是这种做法好像会使单元格中数据的格式出现问题（隔天忘的狗）..</p>
+<p>excel的时间有时会被poi认定为数字，有时又认定为字符，需要注意这里的处理</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fybid.github.io/post/guan-yu-pom-wen-jian">
+              <h3 class="post-title">
+                关于pom文件
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

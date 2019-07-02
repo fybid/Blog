@@ -1,0 +1,177 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Windows环境下的RubyGem配置记录 | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1562033765027">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://fybid.github.io">
+  <img class="avatar" src="https://fybid.github.io/images/avatar.png?v=1562033765027" alt="">
+  </a>
+  <h1 class="site-title">
+    伪犬情报收集站
+  </h1>
+  <p class="site-description">
+    用于个人笔记和信息收集，有错误请帮忙指正。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/partner-link" class="menu">
+          友情链接
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Windows环境下的RubyGem配置记录
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2018-07-28 ·
+              </time>
+              
+                <a href="https://fybid.github.io/tag/46GE1guBZ" class="post-tag">
+                  # 配置
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <h2 id="安装记录">安装记录</h2>
+<ol>
+<li>
+<p><strong><a href="https://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.6-x64.exe">Ruby语言环境安装</a></strong></p>
+</li>
+<li>
+<p><strong><a href="https://rubygems.org/pages/download">Gem安装</a></strong></p>
+</li>
+<li>
+<p>使用国内源：</p>
+<p>gem sources --remove https://rubygems.org/ 删掉原来的源</p>
+<p>gem sources -a http://gems.ruby-china.org/ 添加新源</p>
+<p>gem sources -l 查看现有的源</p>
+</li>
+</ol>
+<h2 id="遇到问题">遇到问题</h2>
+<p>Q:添加新源时遇到SSL验证错误</p>
+<pre><code>	ERROR:  SSL verification error at depth 1: unable to get local issuer certificate (20)
+	ERROR:  You must add /O=Digital Signature Trust Co./CN=DST Root CA X3 to your local trusted store
+	Error fetching https://gems.ruby-china.com/:
+	SSL_connect returned=1 errno=0 state=error: certificate verify failed (https://gems.ruby-china.com/specs.4.8.gz)
+</code></pre>
+<p>A:在**<a href="http://curl.haxx.se/ca/cacert.pem">这里</a>**下载文件，放到C盘的Ruby安装目录下，cmd设置路径:</p>
+<pre><code>set SSL_CERT_FILE=C:\ruby路径\cacert.pem</code></pre>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fybid.github.io/post/nginx-pei-zhi">
+              <h3 class="post-title">
+                Nginx配置
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
