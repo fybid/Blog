@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
-<title>PHP相关心得 | 伪犬情报收集站</title>
+<title>Windows防火墙相关配置 | 伪犬情报收集站</title>
 <link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1573030918599">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fybid.github.io/styles/main.css" type='text/css' media='all'>
@@ -159,36 +159,35 @@
     <div id="loop-container" class="loop-container">
       <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
         
-          <div class='featured-image lazy lazy-bg-image' data-background="https://fybid.github.io/post-images/php-xiang-guan-xin-de.jpg">
+          <div class='featured-image lazy lazy-bg-image' data-background="https://fybid.github.io/post-images/windows-fang-huo-qiang-xiang-guan-pei-zhi.jpg">
           </div>
         
 
         <div class="entry-meta">
-          <span class="date">· 2018-07-10 ·</span> <span> / </span>
+          <span class="date">· 2019-11-06 ·</span> <span> / </span>
           <span class="author">
             <a href="https://fybid.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></a>
           </span>
           
             <span class="category">
                     <span> / </span>
-                    <a href="https://fybid.github.io/tag/4_ME59-9f">语言</a>
+                    <a href="https://fybid.github.io/tag/46GE1guBZ">配置</a>
                 </span>
           
         </div>
         <div class='entry-header'>
-          <h1 class='entry-title'>PHP相关心得</h1>
+          <h1 class='entry-title'>Windows防火墙相关配置</h1>
         </div>
         <div class="entry-container">
           <div class="entry-content">
             <article>
-              <h3 id="关于__autoload">关于__autoload</h3>
-<blockquote>
-<p>__autoload函数拥有全局域，php也支不支持函数重载，只能将几个__autoload合并成一个。
-如此一来就有了更加灵活的spl_autoload_register()的自动加载机制，php官方也建议不要使用__autoload而使用spl_autoload_register()</p>
-</blockquote>
-<h3 id="php文件编码">PHP文件编码</h3>
-<p>一般的PHP代码都是UTF-8，或者Unicode编码。记事本修改后文件保存默认编码格式ANSI。
-所以用记事本修改PHP代码后要注意文件保存时的编码格式。</p>
+              <p>启用防火墙
+netsh advfirewall set currentprofile state on</p>
+<p>开启防火墙日志
+netsh advfirewall set currentprofile logging maxfilesize 4096 #设置大小
+netsh advfirewall set currentprofile logging droppedconnections enable #是否记录drop连接
+netsh advfirewall set currentprofile logging allowedconnections enable #是否记录allow连接
+netsh advfirewall set currentprofile logging filename %systemroot%\system32\LogFiles\Firewall\pfirewall.log</p>
 
             </article>
           </div>
@@ -272,7 +271,7 @@
             <nav class="navigation pagination" role="navigation">
               <h2 class="screen-reader-text">Posts navigation</h2>
               <div class="nav-links">
-                <a class="next page-numbers" href="https://fybid.github.io/post/java-zi-fu-chuan-zhong-wen-luan-ma-wen-ti">下一篇->JAVA字符串 中文乱码问题</a>
+                <a class="next page-numbers" href="https://fybid.github.io/post/javafastjson-shi-yong-xin-de">下一篇->（JAVA）fastjson使用心得</a>
               </div>
             </nav>
           

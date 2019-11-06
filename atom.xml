@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fybid.github.io</id>
     <title>伪犬情报收集站</title>
-    <updated>2019-07-02T03:40:45.796Z</updated>
+    <updated>2019-11-06T09:02:25.007Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fybid.github.io"/>
     <link rel="self" href="https://fybid.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://fybid.github.io/images/avatar.png</logo>
     <icon>https://fybid.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 伪犬情报收集站</rights>
+    <entry>
+        <title type="html"><![CDATA[Windows防火墙相关配置]]></title>
+        <id>https://fybid.github.io/post/windows-fang-huo-qiang-xiang-guan-pei-zhi</id>
+        <link href="https://fybid.github.io/post/windows-fang-huo-qiang-xiang-guan-pei-zhi">
+        </link>
+        <updated>2019-11-06T08:39:01.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[（JAVA）fastjson使用心得]]></title>
         <id>https://fybid.github.io/post/javafastjson-shi-yong-xin-de</id>
@@ -72,12 +79,5 @@
         <link href="https://fybid.github.io/post/jian-li-websocket">
         </link>
         <updated>2018-07-23T05:57:24.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[sublime配置问题与使用技巧记录]]></title>
-        <id>https://fybid.github.io/post/sublime-pei-zhi-wen-ti-yu-shi-yong-ji-qiao-ji-lu</id>
-        <link href="https://fybid.github.io/post/sublime-pei-zhi-wen-ti-yu-shi-yong-ji-qiao-ji-lu">
-        </link>
-        <updated>2018-07-19T05:47:48.000Z</updated>
     </entry>
 </feed>
