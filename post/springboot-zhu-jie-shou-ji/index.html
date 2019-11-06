@@ -1,0 +1,407 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<title>（SpringBoot）注解收集 | 伪犬情报收集站</title>
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1573032146385">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css" type='text/css' media='all'>
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+
+
+</head>
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+  <a class="skip-content" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header" role="banner">
+    <div class='top-navigation top-navigation-important'>
+        <div class='container'>
+            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+                <div class="menu">
+                    <ul id="menu-secondary-items" class="menu-secondary-items">
+                        
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://fybid.github.io/tag/46GE1guBZ">配置</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://fybid.github.io/tag/fCyil_n4l">工具类</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://fybid.github.io/tag/syimA0xeq">框架</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://fybid.github.io/tag/pNt57g3bx">数据库</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://fybid.github.io/tag/hWzsVAhDs">算法</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://fybid.github.io/tag/I7AGN8zx0">部署</a>
+                        </li>
+                            
+                        
+                            
+                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+                            <a href="https://fybid.github.io/tag/4_ME59-9f">语言</a>
+                        </li>
+                            
+                        
+                            
+                        
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+            <ul class="social-media-icons">
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="title-info" class="title-info">
+            <div id='site-title' class='site-title'>
+                <a href="https://fybid.github.io">  伪犬情报收集站 </a>
+            </div>
+        </div>
+        <button id="toggle-navigation" class="toggle-navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+            <p class="site-description">用于个人笔记和信息收集，有错误请帮忙指正。</p>
+            <div class="menu">
+                <ul id="menu-primary-items" class="menu-primary-items">
+                     
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/">首页</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/archives">归档</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/tags">标签</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/post/about">关于</a>
+                            </li>
+                        
+                    
+                        
+                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
+                                <a href="/partner-link">友情链接</a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+
+  <div id="main" class="main" role="main">
+    <div id="loop-container" class="loop-container">
+      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+        
+          <div class='featured-image lazy lazy-bg-image' data-background="https://fybid.github.io/post-images/springboot-zhu-jie-shou-ji.jpg">
+          </div>
+        
+
+        <div class="entry-meta">
+          <span class="date">· 2018-07-09 ·</span> <span> / </span>
+          <span class="author">
+            <a href="https://fybid.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></a>
+          </span>
+          
+            <span class="category">
+                    <span> / </span>
+                    <a href="https://fybid.github.io/tag/syimA0xeq">框架</a>
+                </span>
+          
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'>（SpringBoot）注解收集</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <h3 id="scheduled">Scheduled</h3>
+<p>@Scheduled(cron = &quot;0 0 0&quot;) //定点启动任务</p>
+<p><em>fixedRate</em>就是每多少分钟一次，不论你业务执行花费了多少时间。</p>
+<p><em>fixedDelay</em>是当任务执行完毕后1分钟在执行。</p>
+<p><strong>cron表达式</strong></p>
+<blockquote>
+<p>cron表达式,有专门的语法, 特殊的语法可以单独去查。</p>
+<p>cron一共有7位，但是最后一位是年，可以留空：</p>
+<ul>
+<li>第一位，表示秒，取值0-59</li>
+</ul>
+</blockquote>
+<ul>
+<li>第二位，表示分，取值0-59</li>
+<li>第三位，表示小时，取值0-23</li>
+<li>第四位，日期 日，取值1-31</li>
+<li>第五位，日期 月份，取值1-12</li>
+<li>第六位，星期，取值1-7，星期一，星期二...，注：不是第1周，第二周的意思
+(<font size=2>ps：1表示星期天，2表示星期一。</font>)</li>
+<li>第7为，年份，可以留空，取值1970-2099</li>
+</ul>
+<blockquote>
+<pre><code>  (**)星号：可以理解为每的意思，每秒，每分，每天，每月，每年...
+  (?)问号：问号只能出现在日期和星期这两个位置，表示这个位置的值不确定，每天3点执行，所以第六位星期的位置，我们是不需要关注的，
+  就是不确定的值。同时：日期和星期是两个相互排斥的元素，通过问号来表明不指定值。比如，1月10日，比如是星期1，如果在星期的位置是
+  另指定星期二，就前后冲突矛盾了。
+  (-)减号：表达一个范围，如在小时字段中使用“10-12”，则表示从10到12点，即10,11,12
+  (,)逗号：表达一个列表值，如在星期字段中使用“1,2,4”，则表示星期一，星期二，星期四
+  (/)斜杠：如：x/y，x是开始值，y是步长，比如在第一位（秒） 0/15就是，从0秒开始，每15秒，最后就是0，15，30，45，60    
+</code></pre>
+</blockquote>
+<pre><code>	(另：*/y 等同于0/y)
+</code></pre>
+<blockquote>
+<p>范例：</p>
+<p>0 0 3 * * ?     每天3点执行
+0 5 3 * * ?     每天3点5分执行
+0 5 3 ? * *     每天3点5分执行，与上面作用相同
+0 5/10 3 * * ?  每天3点的 5分，15分，25分，35分，45分，55分这几个时间点执行
+0 10 3 ? * 1    每周星期天，3点10分 执行，注：1表示星期天<br>
+0 10 3 ? * 1#3  每个月的第三个星期，星期天 执行，#号只能出现在星期的位置</p>
+</blockquote>
+<h3 id="enablescheduling">EnableScheduling</h3>
+<p>@EnableScheduling //用于开启@Scheduled</p>
+<h3 id="value">Value</h3>
+<p>@Value(&quot;${xxx}&quot;)可以读取默认配置文件(properties)中的xxx字段</p>
+<h3 id="initbinder">InitBinder</h3>
+<p>@InitBinder</p>
+<p>实际项目中对该注解的应用经验：
+ajax请求发生错误：<code>Failed to convert value of type 'java.lang.String' to required type 'java.util.Date'</code>
+在网上查找解决方法时了解到通过在后端加入以下内容可解决该问题：
+public void initBinder(WebDataBinder binder, WebRequest request) {
+//转换日期
+DateFormat dateFormat=new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));// CustomDateEditor为自定义日期编辑器
+}</p>
+<h3 id="generatedvalue">GeneratedValue</h3>
+<p>@GeneratedValue 实体类生成id，jpa</p>
+<h3 id="genericgenerator">GenericGenerator</h3>
+<p>@GenericGenerator 注解@GeneratedValue的策略补充，hibernate</p>
+
+            </article>
+          </div>
+          <div class='entry-meta-bottom'>
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                
+                  
+                    
+                  <a href="https://fybid.github.io/tag/46GE1guBZ" title="View all posts in 配置">配置</a>
+                    
+                    
+                    
+                  <a href="https://fybid.github.io/tag/fCyil_n4l" title="View all posts in 工具类">工具类</a>
+                    
+                    
+                    
+                  <a href="https://fybid.github.io/tag/syimA0xeq" title="View all posts in 框架">框架</a>
+                    
+                    
+                    
+                  <a href="https://fybid.github.io/tag/pNt57g3bx" title="View all posts in 数据库">数据库</a>
+                    
+                    
+                    
+                  <a href="https://fybid.github.io/tag/hWzsVAhDs" title="View all posts in 算法">算法</a>
+                    
+                    
+                    
+                  <a href="https://fybid.github.io/tag/I7AGN8zx0" title="View all posts in 部署">部署</a>
+                    
+                    
+                    
+                  <a href="https://fybid.github.io/tag/4_ME59-9f" title="View all posts in 语言">语言</a>
+                    
+                    
+                    
+                  <a href="https://fybid.github.io/tag/mVYEwfLAD" title="View all posts in 网络">网络</a>
+                    
+                    
+                    
+                  <a href="https://fybid.github.io/tag/ZCtcn0pI5" title="View all posts in 测试">测试</a>
+                    
+                    
+              </p>
+            </div>
+            <div class="entry-tags">
+              <p><span>Tags</span>
+              </p>
+            </div>
+          </div>
+          <div class="author-meta">
+            <div class="author">
+              <img alt='' src="https://fybid.github.io/images/avatar.png?v=1573032146385" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://fybid.github.io'></a> </span>
+            </div>
+            <div class="bio">
+              <p></p>
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </div>
+          </div>
+        </div>
+          
+            <nav class="navigation pagination" role="navigation">
+              <h2 class="screen-reader-text">Posts navigation</h2>
+              <div class="nav-links">
+                <a class="next page-numbers" href="https://fybid.github.io/post/springboot-qi-dong-wen-ti-shou-ji">下一篇->（SpringBoot）启动问题收集</a>
+              </div>
+            </nav>
+          
+      </div>
+      <section id="comments" class="comments">
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '625330ed5b9f1bd805be',
+    clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+    repo: 'fybid.github.io',
+    owner: 'fybid',
+    admin: ['fybid'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+      </section>
+    </div>
+  </div>
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <h1>
+        <a href="https://fybid.github.io"> 伪犬情报收集站 </a>
+    </h1>
+    <p class="site-description">用于个人笔记和信息收集，有错误请帮忙指正。</p>
+    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
+        <div class="menu">
+            <ul id="menu-footer-items" class="menu-footer-items">
+            </ul>
+        </div>
+    </div>
+    <ul class="social-media-icons">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+    <div class="design-credit">
+        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+    </div>
+</footer>
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+<script src="https://fybid.github.io/media/scripts/lib/jquery.min.js"></script>
+<script src="https://fybid.github.io/media/scripts/lib/jquerymigrate.js"></script>
+<script src="https://fybid.github.io/media/scripts/lib/production.min.js"></script>
+
+</div>
+</body>
+</html>
+
