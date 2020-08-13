@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fybid.github.io</id>
     <title>伪犬情报收集站</title>
-    <updated>2020-08-13T07:03:38.453Z</updated>
+    <updated>2020-08-13T08:09:13.328Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fybid.github.io"/>
     <link rel="self" href="https://fybid.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://fybid.github.io/images/avatar.png</logo>
     <icon>https://fybid.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 伪犬情报收集站</rights>
+    <entry>
+        <title type="html"><![CDATA[CentOS下 安装配置 vsftp]]></title>
+        <id>https://fybid.github.io/post/centos-xia-an-zhuang-pei-zhi-vsftp/</id>
+        <link href="https://fybid.github.io/post/centos-xia-an-zhuang-pei-zhi-vsftp/">
+        </link>
+        <updated>2020-08-13T07:39:49.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[HTTP状态码]]></title>
         <id>https://fybid.github.io/post/http-zhuang-tai-ma/</id>
@@ -39,7 +46,7 @@
         <updated>2020-06-17T03:17:39.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[对于CentOS7的安全设置]]></title>
+        <title type="html"><![CDATA[对CentOS7做一些安全的配置]]></title>
         <id>https://fybid.github.io/post/dui-yu-centos7-de-an-quan-she-zhi/</id>
         <link href="https://fybid.github.io/post/dui-yu-centos7-de-an-quan-she-zhi/">
         </link>
@@ -72,12 +79,5 @@
         <link href="https://fybid.github.io/post/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa/">
         </link>
         <updated>2018-08-04T01:16:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Windows下Redis-Cluster集群配置]]></title>
-        <id>https://fybid.github.io/post/windows-xia-redis-cluster-ji-qun-pei-zhi/</id>
-        <link href="https://fybid.github.io/post/windows-xia-redis-cluster-ji-qun-pei-zhi/">
-        </link>
-        <updated>2018-07-28T06:19:00.000Z</updated>
     </entry>
 </feed>

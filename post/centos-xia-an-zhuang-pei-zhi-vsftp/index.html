@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>mysql技巧记录 | 伪犬情报收集站</title>
+<title>CentOS下 安装配置 vsftp | 伪犬情报收集站</title>
 <meta name="description" content="用于个人笔记和信息收集，有错误请帮忙指正。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -104,64 +104,35 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">mysql技巧记录</h2>
-            <div class="post-date">2018-07-09</div>
+            <h2 class="post-title">CentOS下 安装配置 vsftp</h2>
+            <div class="post-date">2020-08-13</div>
             
-              <div class="feature-container" style="background-image: url('https://fybid.github.io/post-images/mysql-ji-qiao-ji-lu.jpg')">
+              <div class="feature-container" style="background-image: url('https://scontent-hkg4-2.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/116946472_289987325788792_2473354433097130828_n.jpg?_nc_ht=scontent-hkg4-2.cdninstagram.com&amp;_nc_cat=104&amp;_nc_ohc=SHFHtB8sd30AX9RLHUo&amp;oh=362a089c827e382d8a4ec530e9df140e&amp;oe=5F5F0DC1')">
               </div>
             
             <div class="post-content">
-              <h3 id="批量更新">批量更新</h3>
-<pre><code>mysql中好像没有批量更新的相关方法，可使用case..when..then格式的方式进行批量更新
-</code></pre>
-<h3 id="not-in">not in()</h3>
-<pre><code>sql语句中，not in() 排除一部分值在in内的元素，同时也会排除值为空的元素
-</code></pre>
-<h3 id="left-join">left join</h3>
-<p>在使用left jion时，on和where条件的区别如下：</p>
-<p>1、on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。</p>
-<p>2、where条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有left join的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</p>
-<h3 id="导入导出dump文件">导入导出dump文件</h3>
-<p>导出</p>
-<pre><code>mysqldump -u[数据库账号] -p[数据库密码] -P[端口号] -h[目标数据库IP地址] [数据库名] [表名] &gt; [dump文件路径]
-</code></pre>
-<p>导入</p>
-<pre><code>mysqldump  -u[数据库账号] -p[数据库密码] -P[端口号] -h[目标数据库IP地址] [数据库名] [表名] &lt; [dump文件路径]
-</code></pre>
-<h3 id="order-by">order by</h3>
-<pre><code>曾经使用RDS时，IOPS使用率过高，后来发现原因是id没有建立索引，sql中用了order by id 进行了全表扫描，又有多个数据库连接所导致
-</code></pre>
-<h3 id="关联操作">关联操作</h3>
-<p>关联操作 若有同名字段 只能将 * 逐条列出..<br>
-如果想用关联表字段替换原表字段则要在取出时忽略原字段，取出关联表字段并用as更改为原表要替换的字段名（当然，两者的数据类型得一致</p>
-<h3 id="设置字段只读">设置字段只读</h3>
-<p>触发器方法,防止修改name 字段:</p>
-<pre><code>create trigger tr_update on 你的表
-for update
-as
-if update(name) rollback tran
-go
-</code></pre>
-<p>--当允许修改name的时候,执行下面的语句关闭触发器</p>
-<pre><code>	alter table 你的表 disable trigger tr_update
-</code></pre>
-<p>--当不允许修改name的时候,执行下面的语句开启触发器</p>
-<pre><code>	alter table 你的表 enable trigger tr_update
-</code></pre>
-<p>--同时对用户的权限做限制,只允许管理员有开启/关闭触发器的权限</p>
-<h3 id="建表冲突情况分析">建表冲突情况分析</h3>
-<ol>
-<li>自动编号和默认值一起设置会出错</li>
-<li>text类型字段设置默认值会报错</li>
-<li>date类型字段默认值格式不正确会报错</li>
-</ol>
+              <ul>
+<li>1.去官网下载安装包 or yum安装?</li>
+<li>2.命令添加用户<br>
+<code>useradd ftpname -s /sbin/nologin –d /www(对应用户文件路径)</code></li>
+<li>3.配置修改<br>
+<code>anonymous_enable=NO //关闭匿名登录</code><br>
+<code>listen=yes(注意该项与listen_ipv6冲突，一开一关)</code><br>
+<code>listen_port=监听端口</code><br>
+<code>pasv_enable=YES</code><br>
+<code>pasv_min_port=30000</code><br>
+<code>pasv_max_port=30999</code></li>
+<li>4.防火墙开放端口 监听端口与30000-30999</li>
+<li>5.启动服务<br>
+<code>service vsftpd start</code></li>
+</ul>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://fybid.github.io/tag/pNt57g3bx/" class="tag">
-                    数据库
+                  <a href="https://fybid.github.io/tag/centos/" class="tag">
+                    CentOS
                   </a>
                 
               </div>
@@ -169,9 +140,9 @@ go
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://fybid.github.io/post/springboot-xiang-mu-shi-ti-lei-ying-she-sheng-cheng-shu-ju-biao-de-pei-zhi-fang-shi/">
+                <a href="https://fybid.github.io/post/http-zhuang-tai-ma/">
                   <h3 class="post-title">
-                    （SpringBoot）实体类映射生成数据表的配置方式
+                    HTTP状态码
                   </h3>
                 </a>
               </div>
