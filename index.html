@@ -1,428 +1,310 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" >
 
 <title>伪犬情报收集站</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="用于个人笔记和信息收集，有错误请帮忙指正。">
 
-<meta name="description" content="用于个人笔记和信息收集，有错误请帮忙指正。"/>
-<meta name="keywords" content="用于个人笔记和信息收集，有错误请帮忙指正。"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico">
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1597284984361">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
 
-<!-- Modernizr JS -->
-<script src="https://fybid.github.io/media/scripts/_vendors/modernizr-2.6.2.min.js"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-<scripts src="https://fybid.github.io/media/scripts/_vendors/respond.min.js"></scripts>
-<![endif]-->
-
-<!-- Comment -->
 
 
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-<!-- katex -->
-<!--<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet">-->
-
-<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 
   </head>
   <body>
-    <div id="fh5co-offcanvas">
-    <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
-        <span><i class="icon-cross3"></i> <span>Close</span></span>
-    </a>
-    <div class="fh5co-bio">
-        <figure>
-            <img src="https://fybid.github.io/media/images/avatar.png" alt="伪犬情报收集站"
-                 class="img-responsive">
-        </figure>
-        <a href="https://fybid.github.io/post/about/"><h3 class="heading">ABOUT ME</h3></a>
-        <h2>伪犬情报收集站</h2>
-        <p>用于个人笔记和信息收集，有错误请帮忙指正。</p>
-        <ul class="fh5co-social">
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-                <li>
-                    
-                </li>
-            
-        </ul>
-    </div>
+    <div id="app" class="main">
 
-    <div class="fh5co-menu">
-
-        <!-- 标签 -->
-        <div class="fh5co-box">
-            <a href="https://fybid.github.io/tags/"><h3 class="heading">👉标签</h3></a>
-            <ul>
-                
-                    <li><a href="https://fybid.github.io/tag/pNt57g3bx/">数据库</a></li>
-                
-                    <li><a href="https://fybid.github.io/tag/46GE1guBZ/">配置</a></li>
-                
-                    <li><a href="https://fybid.github.io/tag/fCyil_n4l/">工具类</a></li>
-                
-                    <li><a href="https://fybid.github.io/tag/syimA0xeq/">框架</a></li>
-                
-                    <li><a href="https://fybid.github.io/tag/hWzsVAhDs/">算法</a></li>
-                
-                    <li><a href="https://fybid.github.io/tag/I7AGN8zx0/">部署</a></li>
-                
-                    <li><a href="https://fybid.github.io/tag/4_ME59-9f/">语言</a></li>
-                
-                    <li><a href="https://fybid.github.io/tag/mVYEwfLAD/">网络</a></li>
-                
-                    <li><a href="https://fybid.github.io/tag/ZCtcn0pI5/">测试</a></li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-
-<header id="fh5co-header">
-    <div class="container-fluid">
-        <div class="row">
-            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-            <ul class="fh5co-social">
-                
-                    <li>
-                        <a href="/"
-                        
-                        >
-                            首页
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/archives"
-                        
-                        >
-                            归档
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/tags"
-                        
-                        >
-                            标签
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/post/about"
-                        
-                        >
-                            关于
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/partner-link"
-                        
-                        >
-                            友情链接
-                        </a>
-                    </li>
-                
-            </ul>
-            <div class="col-lg-12 col-md-12 text-center">
-                <h1 id="fh5co-logo">
-                    <a href="https://fybid.github.io">伪犬情报收集站 </a>
-                </h1>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-    <div class="container-fluid">
-      <div class="row fh5co-post-entry">
-
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
-            <figure class="img-box">
-              <a href="https://fybid.github.io/post/http-zhuang-tai-ma/">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://fybid.github.io/post/http-zhuang-tai-ma/">HTTP状态码</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2020-06-30</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
-            <figure class="img-box">
-              <a href="https://fybid.github.io/post/sqlserver-an-zhuang-yu-pei-zhi/">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://fybid.github.io/tag/pNt57g3bx/" class="tag">数据库, </a>
-                    
-                        <a href="https://fybid.github.io/tag/46GE1guBZ/" class="tag">配置, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://fybid.github.io/post/sqlserver-an-zhuang-yu-pei-zhi/">sqlserver 安装与配置</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2020-06-19</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
-            <figure class="img-box">
-              <a href="https://fybid.github.io/post/oracle11old-an-zhuang-yu-pei-zhi/">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://fybid.github.io/tag/pNt57g3bx/" class="tag">数据库, </a>
-                    
-                        <a href="https://fybid.github.io/tag/46GE1guBZ/" class="tag">配置, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://fybid.github.io/post/oracle11old-an-zhuang-yu-pei-zhi/">oracle11(old) 安装与配置</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2020-06-17</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
-            <figure class="img-box">
-              <a href="https://fybid.github.io/post/mysql-an-zhuang-yu-pei-zhi/">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://fybid.github.io/tag/pNt57g3bx/" class="tag">数据库, </a>
-                    
-                        <a href="https://fybid.github.io/tag/46GE1guBZ/" class="tag">配置, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://fybid.github.io/post/mysql-an-zhuang-yu-pei-zhi/">mysql 安装与配置</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2020-06-17</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
-            <figure class="img-box">
-              <a href="https://fybid.github.io/post/dui-yu-centos7-de-an-quan-she-zhi/">
-                
-                  <img data-original="https://fybid.github.io/post-images/dui-yu-centos7-de-an-quan-she-zhi.jpg" alt="对于CentOS7的安全设置" class="img-responsive img-rounded lazy">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://fybid.github.io/post/dui-yu-centos7-de-an-quan-she-zhi/">对于CentOS7的安全设置</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2020-05-08</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
-            <figure class="img-box">
-              <a href="https://fybid.github.io/post/windows-fang-huo-qiang-xiang-guan-pei-zhi/">
-                
-                  <img data-original="https://fybid.github.io/post-images/windows-fang-huo-qiang-xiang-guan-pei-zhi.jpg" alt="Windows防火墙相关配置" class="img-responsive img-rounded lazy">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://fybid.github.io/tag/46GE1guBZ/" class="tag">配置, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://fybid.github.io/post/windows-fang-huo-qiang-xiang-guan-pei-zhi/">Windows防火墙相关配置</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2019-11-06</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
-            <figure class="img-box">
-              <a href="https://fybid.github.io/post/javafastjson-shi-yong-xin-de/">
-                
-                  <img data-original="https://fybid.github.io/post-images/javafastjson-shi-yong-xin-de.jpg" alt="（JAVA）fastjson使用心得" class="img-responsive img-rounded lazy">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://fybid.github.io/tag/fCyil_n4l/" class="tag">工具类, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://fybid.github.io/post/javafastjson-shi-yong-xin-de/">（JAVA）fastjson使用心得</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2018-08-10</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
-            <figure class="img-box">
-              <a href="https://fybid.github.io/post/spring-de-san-chong-zi-dong-zhu-ru-de-fang-shi/">
-                
-                  <img data-original="https://fybid.github.io/post-images/spring-de-san-chong-zi-dong-zhu-ru-de-fang-shi.jpg" alt="（Spring）三种自动注入的方式" class="img-responsive img-rounded lazy">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://fybid.github.io/tag/syimA0xeq/" class="tag">框架, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://fybid.github.io/post/spring-de-san-chong-zi-dong-zhu-ru-de-fang-shi/">（Spring）三种自动注入的方式</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2018-08-04</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
-            <figure class="img-box">
-              <a href="https://fybid.github.io/post/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa/">
-                
-                  <img data-original="https://fybid.github.io/post-images/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa.jpg" alt="mybatis使用自定义sql的方法" class="img-responsive img-rounded lazy">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://fybid.github.io/tag/pNt57g3bx/" class="tag">数据库, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://fybid.github.io/post/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa/">mybatis使用自定义sql的方法</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2018-08-04</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box" style="height: 25em;">
-            <figure class="img-box">
-              <a href="https://fybid.github.io/post/windows-xia-redis-cluster-ji-qun-pei-zhi/">
-                
-                  <img data-original="https://fybid.github.io/post-images/windows-xia-redis-cluster-ji-qun-pei-zhi.jpg" alt="Windows下Redis-Cluster集群配置" class="img-responsive img-rounded lazy">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://fybid.github.io/tag/46GE1guBZ/" class="tag">配置, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://fybid.github.io/post/windows-xia-redis-cluster-ji-qun-pei-zhi/">Windows下Redis-Cluster集群配置</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2018-07-28</span>
-          </article>
-        
-        <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
-
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://fybid.github.io">
+        <img src="https://fybid.github.io/images/avatar.png?v=1597284984361" class="site-logo">
+        <h1 class="site-title">伪犬情报收集站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-
-      <div class="pagination-box animate-box">
+    </div>
+    <div>
+      
         
-        
-          <a href="https://fybid.github.io/page/2" class="next">下一页
-            <i class="fa fa-chevron-right"></i>
+          <a href="/" class="site-nav">
+            首页
           </a>
         
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+        
+          <a href="/partner-link" class="site-nav">
+            友情链接
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      用于个人笔记和信息收集，有错误请帮忙指正。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://fybid.github.io/post/http-zhuang-tai-ma/">
+                  <h2 class="post-title">HTTP状态码</h2>
+                </a>
+                <div class="post-date">
+                  2020-06-30
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://fybid.github.io/post/sqlserver-an-zhuang-yu-pei-zhi/">
+                  <h2 class="post-title">sqlserver 安装与配置</h2>
+                </a>
+                <div class="post-date">
+                  2020-06-19
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://fybid.github.io/post/oracle11old-an-zhuang-yu-pei-zhi/">
+                  <h2 class="post-title">oracle11(old) 安装与配置</h2>
+                </a>
+                <div class="post-date">
+                  2020-06-17
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://fybid.github.io/post/mysql-an-zhuang-yu-pei-zhi/">
+                  <h2 class="post-title">mysql 安装与配置</h2>
+                </a>
+                <div class="post-date">
+                  2020-06-17
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://fybid.github.io/post/dui-yu-centos7-de-an-quan-she-zhi/">
+                  <h2 class="post-title">对于CentOS7的安全设置</h2>
+                </a>
+                <div class="post-date">
+                  2020-05-08
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://fybid.github.io/post/dui-yu-centos7-de-an-quan-she-zhi/">
+                  <div class="feature-container" style="background-image: url('https://fybid.github.io/post-images/dui-yu-centos7-de-an-quan-she-zhi.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://fybid.github.io/post/windows-fang-huo-qiang-xiang-guan-pei-zhi/">
+                  <h2 class="post-title">Windows防火墙相关配置</h2>
+                </a>
+                <div class="post-date">
+                  2019-11-06
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://fybid.github.io/post/windows-fang-huo-qiang-xiang-guan-pei-zhi/">
+                  <div class="feature-container" style="background-image: url('https://fybid.github.io/post-images/windows-fang-huo-qiang-xiang-guan-pei-zhi.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://fybid.github.io/post/javafastjson-shi-yong-xin-de/">
+                  <h2 class="post-title">（JAVA）fastjson使用心得</h2>
+                </a>
+                <div class="post-date">
+                  2018-08-10
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://fybid.github.io/post/javafastjson-shi-yong-xin-de/">
+                  <div class="feature-container" style="background-image: url('https://fybid.github.io/post-images/javafastjson-shi-yong-xin-de.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://fybid.github.io/post/spring-de-san-chong-zi-dong-zhu-ru-de-fang-shi/">
+                  <h2 class="post-title">（Spring）三种自动注入的方式</h2>
+                </a>
+                <div class="post-date">
+                  2018-08-04
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://fybid.github.io/post/spring-de-san-chong-zi-dong-zhu-ru-de-fang-shi/">
+                  <div class="feature-container" style="background-image: url('https://fybid.github.io/post-images/spring-de-san-chong-zi-dong-zhu-ru-de-fang-shi.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://fybid.github.io/post/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa/">
+                  <h2 class="post-title">mybatis使用自定义sql的方法</h2>
+                </a>
+                <div class="post-date">
+                  2018-08-04
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://fybid.github.io/post/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa/">
+                  <div class="feature-container" style="background-image: url('https://fybid.github.io/post-images/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://fybid.github.io/post/windows-xia-redis-cluster-ji-qun-pei-zhi/">
+                  <h2 class="post-title">Windows下Redis-Cluster集群配置</h2>
+                </a>
+                <div class="post-date">
+                  2018-07-28
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+                <a class="right" href="https://fybid.github.io/post/windows-xia-redis-cluster-ji-qun-pei-zhi/">
+                  <div class="feature-container" style="background-image: url('https://fybid.github.io/post-images/windows-xia-redis-cluster-ji-qun-pei-zhi.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+  
+    <a href="https://fybid.github.io/page/2" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
+  
+</div>
+
+        </div>
       </div>
     </div>
 
-    
-<footer id="fh5co-footer">
-  <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
-</footer>
-
-
-    <!-- jQuery -->
-<script src="https://fybid.github.io/media/scripts/_vendors/jquery.min.js"></script>
-<!-- img lazy load -->
-<script src="https://fybid.github.io/media/scripts/_vendors/jquery.lazyload.min.js"></script>
-<!-- jQuery Easing -->
-<script src="https://fybid.github.io/media/scripts/_vendors/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="https://fybid.github.io/media/scripts/_vendors/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="https://fybid.github.io/media/scripts/_vendors/jquery.waypoints.min.js"></script>
-<!-- Main JS -->
-<script src="https://fybid.github.io/media/scripts/_vendors/main.js"></script>
-<!-- Md5 Min JS -->
-<script src="https://fybid.github.io/media/scripts/_vendors/md5.min.js"></script>
-<!-- katex -->
-<!--<script src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>-->
-<!-- highlight -->
-<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <script type="application/javascript">
-    // 代码高亮
-    hljs.initHighlightingOnLoad();
 
-    // img 懒加载
-    $(function () {
-        $("img.lazy").lazyload({
-            effect: "fadeIn",  // 懒加载动画
-            threshold: 180  // 在图片距离屏幕180px时提前载入
-        });
-        // tooltip
-        $('[data-toggle="tooltip"]').tooltip();
+AOS.init();
 
-        // 目录
-        $('#tool-toc').click(function () {
-            $('.post-toc').toggle();
-        });
-    });
+hljs.initHighlightingOnLoad()
 
-    
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
 
