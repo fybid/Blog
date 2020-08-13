@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1597306146264">
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1597311984230">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://fybid.github.io">
-        <img src="https://fybid.github.io/images/avatar.png?v=1597306146264" class="site-logo">
+        <img src="https://fybid.github.io/images/avatar.png?v=1597311984230" class="site-logo">
         <h1 class="site-title">伪犬情报收集站</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -111,10 +111,14 @@
               </div>
             
             <div class="post-content">
-              <h3 id="scheduled">Scheduled</h3>
-<p>@Scheduled(cron = &quot;0 0 0&quot;) //定点启动任务</p>
-<p><em>fixedRate</em>就是每多少分钟一次，不论你业务执行花费了多少时间。</p>
-<p><em>fixedDelay</em>是当任务执行完毕后1分钟在执行。</p>
+              <h3 id="fetch-and-elementcollection">Fetch and ElementCollection</h3>
+<p>@Fetch(FetchMode.JOIN) 和 @ElementCollection 搭配使用</p>
+<h3 id="transient">Transient</h3>
+<p>标记实体类字段不参与序列化过程</p>
+<h3 id="scheduled">Scheduled</h3>
+<p>@Scheduled(cron = &quot;0 0 0&quot;) //定点启动任务<br>
+<em>fixedRate</em>就是每多少分钟一次，不论你业务执行花费了多少时间。<br>
+<em>fixedDelay</em>是当任务执行完毕后1分钟在执行。</p>
 <p><strong>cron表达式</strong></p>
 <blockquote>
 <p>cron表达式,有专门的语法, 特殊的语法可以单独去查。</p>
@@ -176,8 +180,8 @@ binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
             
               <div class="tag-container">
                 
-                  <a href="https://fybid.github.io/tag/syimA0xeq/" class="tag">
-                    框架
+                  <a href="https://fybid.github.io/tag/SpringBoot/" class="tag">
+                    SpringBoot
                   </a>
                 
               </div>

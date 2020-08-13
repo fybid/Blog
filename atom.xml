@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fybid.github.io</id>
     <title>伪犬情报收集站</title>
-    <updated>2020-08-13T08:09:13.328Z</updated>
+    <updated>2020-08-13T09:52:11.970Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fybid.github.io"/>
     <link rel="self" href="https://fybid.github.io/atom.xml"/>
@@ -10,6 +10,34 @@
     <logo>https://fybid.github.io/images/avatar.png</logo>
     <icon>https://fybid.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 伪犬情报收集站</rights>
+    <entry>
+        <title type="html"><![CDATA[（SpringBoot）创建全局变量]]></title>
+        <id>https://fybid.github.io/post/springbootchuang-jian-quan-ju-bian-liang/</id>
+        <link href="https://fybid.github.io/post/springbootchuang-jian-quan-ju-bian-liang/">
+        </link>
+        <updated>2020-08-13T09:28:56.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Docker异常处理记录]]></title>
+        <id>https://fybid.github.io/post/docker-yi-chang-chu-li-ji-lu/</id>
+        <link href="https://fybid.github.io/post/docker-yi-chang-chu-li-ji-lu/">
+        </link>
+        <updated>2020-08-13T09:03:04.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于压缩文件]]></title>
+        <id>https://fybid.github.io/post/guan-yu-ya-suo-wen-jian/</id>
+        <link href="https://fybid.github.io/post/guan-yu-ya-suo-wen-jian/">
+        </link>
+        <updated>2020-08-13T08:52:39.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[记录一些Linux好用的命令]]></title>
+        <id>https://fybid.github.io/post/ji-lu-yi-xie-linux-hao-yong-de-ming-ling/</id>
+        <link href="https://fybid.github.io/post/ji-lu-yi-xie-linux-hao-yong-de-ming-ling/">
+        </link>
+        <updated>2020-08-13T08:38:34.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CentOS下 安装配置 vsftp]]></title>
         <id>https://fybid.github.io/post/centos-xia-an-zhuang-pei-zhi-vsftp/</id>
@@ -51,33 +79,5 @@
         <link href="https://fybid.github.io/post/dui-yu-centos7-de-an-quan-she-zhi/">
         </link>
         <updated>2020-05-08T07:17:48.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Windows防火墙相关配置]]></title>
-        <id>https://fybid.github.io/post/windows-fang-huo-qiang-xiang-guan-pei-zhi/</id>
-        <link href="https://fybid.github.io/post/windows-fang-huo-qiang-xiang-guan-pei-zhi/">
-        </link>
-        <updated>2019-11-06T08:39:01.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[（JAVA）fastjson使用心得]]></title>
-        <id>https://fybid.github.io/post/javafastjson-shi-yong-xin-de/</id>
-        <link href="https://fybid.github.io/post/javafastjson-shi-yong-xin-de/">
-        </link>
-        <updated>2018-08-10T08:47:50.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[（Spring）三种自动注入的方式]]></title>
-        <id>https://fybid.github.io/post/spring-de-san-chong-zi-dong-zhu-ru-de-fang-shi/</id>
-        <link href="https://fybid.github.io/post/spring-de-san-chong-zi-dong-zhu-ru-de-fang-shi/">
-        </link>
-        <updated>2018-08-04T01:28:43.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[mybatis使用自定义sql的方法]]></title>
-        <id>https://fybid.github.io/post/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa/</id>
-        <link href="https://fybid.github.io/post/mybatis-shi-yong-zi-ding-yi-sql-de-fang-fa/">
-        </link>
-        <updated>2018-08-04T01:16:00.000Z</updated>
     </entry>
 </feed>

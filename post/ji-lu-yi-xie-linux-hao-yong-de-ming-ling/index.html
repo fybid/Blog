@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>记录一些Linux好用的命令 | 伪犬情报收集站</title>
+<meta name="description" content="用于个人笔记和信息收集，有错误请帮忙指正。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://fybid.github.io/favicon.ico?v=1597311984230">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fybid.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://fybid.github.io">
+        <img src="https://fybid.github.io/images/avatar.png?v=1597311984230" class="site-logo">
+        <h1 class="site-title">伪犬情报收集站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+        
+          <a href="/partner-link" class="site-nav">
+            友情链接
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      用于个人笔记和信息收集，有错误请帮忙指正。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://fybid.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">记录一些Linux好用的命令</h2>
+            <div class="post-date">2020-08-13</div>
+            
+              <div class="feature-container" style="background-image: url('https://scontent-hkg4-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/117732813_618323529095576_4252845387164773858_n.jpg?_nc_ht=scontent-hkg4-1.cdninstagram.com&amp;_nc_cat=1&amp;_nc_ohc=48fm-TD1gZIAX-5JtUS&amp;oh=0f8459b5cf6a22c8a57d014766c3682d&amp;oe=5F5DB19A')">
+              </div>
+            
+            <div class="post-content">
+              <!-- more -->
+<ul>
+<li>IP/DNS等网络设置在 /etc/sysconfig/network-scripts</li>
+<li>注意 无法访问到某些域名的时候 可能是因为 /etc/sysconfig/network-scripts 下 当前使用的网卡的网络没设置DNS</li>
+<li>禁用/启用用户 sudo passwd -l/-u 用户名</li>
+<li>给用户管理员权限需要在 /etc/sudoers中修改</li>
+<li>编辑文本时 快速定位的方法 输入 '/要查找的字符'</li>
+<li>tar -xvf 和 unzip 是不一样的</li>
+<li>rm -rf 可以删除非空文件夹</li>
+<li>cat log日志</li>
+<li>scp src dst 复制</li>
+<li>mv 移动文件兼重命名</li>
+<li>systemctl 系统服务控制</li>
+<li>jps -l 可以看到java进程和其pid</li>
+<li>jstack -l pid &gt; /path/filename</li>
+<li>ln -s /mnt/f/javaProject/ ~/jproject 建立文件夹路径的快捷方式</li>
+<li>grep &quot;word&quot; test.txt 从文本中查找关键字</li>
+<li>ss -anptl 检查服务 端口 地址 进程id 等信息</li>
+<li>timedatectl 时间控制<br>
+<code>set-time &quot;yyyy-MM-dd HH24:mi:ss&quot;</code><br>
+<code>set-timezone Asia/Shanghai</code></li>
+<li>du -h --max-depth=1 查看当前一层文件夹大小</li>
+<li>history 历史命令</li>
+<li>top 任务管理器?</li>
+<li>last 最近登陆成功的ip地址</li>
+<li>lastb 最近没有登陆成功的ip地址</li>
+<li>crontab -l 定时执行的程序</li>
+</ul>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://fybid.github.io/tag/linux/" class="tag">
+                    Linux
+                  </a>
+                
+                  <a href="https://fybid.github.io/tag/kokE2Xvq7/" class="tag">
+                    基础
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://fybid.github.io/post/centos-xia-an-zhuang-pei-zhi-vsftp/">
+                  <h3 class="post-title">
+                    CentOS下 安装配置 vsftp
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '625330ed5b9f1bd805be',
+        clientSecret: '5fd9bcd0f676ea2afdacc0fea25b40bfb7204d48',
+        repo: 'fybid.github.io',
+        owner: 'fybid',
+        admin: ['fybid'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
